@@ -70,7 +70,7 @@ export default function Hero() {
                 Download CV
               </a>
               <a
-                href="/about"
+                href="/Contact"
                 className="bg-purple-100 hover:bg-purple-200 text-purple-700 px-8 flex items-center py-2 rounded"
               >
                 <span className="mr-3 h-5 w-5 text-2xl">
