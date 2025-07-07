@@ -33,8 +33,40 @@ export default function Skills() {
     },
   }
 
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 50,
+      scale: 0.8,
+      rotateY: -90,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      rotateY: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 12,
+        duration: 0.8,
+      },
+    },
+  }
 
-  
+  const glowVariants = {
+    initial: {
+      boxShadow: "0 0 20px rgba(147, 51, 234, 0.3)",
+    },
+    hover: {
+      boxShadow: "0 0 40px rgba(147, 51, 234, 0.6), 0 0 60px rgba(236, 72, 153, 0.4)",
+      scale: 1.05,
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+      },
+    },
+  }
 
   return (
     <section className="relative bg-gradient-to-br from-purple-950 via-black to-black py-16 sm:py-24 lg:py-32 overflow-hidden">
@@ -94,10 +126,12 @@ export default function Skills() {
           {skills.map((skill, index) => (
             <motion.div
               key={index}
+              variants={itemVariants}
               className="relative group flex flex-col items-center"
               whileHover="hover"
             >
               <motion.div
+                variants={glowVariants}
                 initial="initial"
                 whileHover="hover"
                 className="w-24 h-24 sm:w-32 sm:h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40 bg-gradient-to-br from-purple-900/50 to-black/50 backdrop-blur-sm rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 border border-purple-500/20 flex flex-col items-center justify-center"
